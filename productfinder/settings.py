@@ -16,7 +16,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR, "templates")
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-print(STATIC_DIR)
+MEDIA_DIRECTORY = os.path.join(BASE_DIR, "media")
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -135,6 +136,8 @@ STATICFILES_DIR = [
     STATIC_DIR
 ]
 
+MEDIA_ROOT = MEDIA_DIRECTORY
+MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"

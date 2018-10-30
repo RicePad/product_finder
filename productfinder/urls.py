@@ -25,7 +25,5 @@ urlpatterns = [
     path('home/', views.HomeView.as_view(), name=LOGIN_REDIRECT_URL),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include("django.contrib.auth.urls")),
-
-
-
+    path('products/', include('products.urls')),
 ]
