@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import(LoginRequiredMixin,PermissionRequiredMixin)
-from django.views.generic import TemplateView, CreateView, ListView, DeleteView, UpdateView
+from django.views.generic import TemplateView, CreateView, ListView, DeleteView, UpdateView, DetailView
 from products.models import Product
 
 
@@ -15,3 +15,7 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
         self.object.user = self.request.user
         self.object.save()
         return super().form_valid(form)
+
+class ProductDetailView(DetailView):
+    context_object_name = "product_detail"
+    model = Product

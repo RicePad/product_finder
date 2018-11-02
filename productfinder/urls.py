@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from productfinder import views
 from productfinder.settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -26,4 +28,4 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('accounts/', include("django.contrib.auth.urls")),
     path('products/', include('products.urls')),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
