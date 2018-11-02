@@ -6,6 +6,5 @@ app_name = "products"
 urlpatterns = [
     path('new/', views.ProductCreateView.as_view(), name="new"),
     re_path(r'^product_detail/(?P<pk>\d+)$', views.ProductDetailView.as_view(), name='product_detail'),
-
-
+    path('', views.ProductListView.as_view(), name="product_list"),
 ]

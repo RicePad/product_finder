@@ -16,6 +16,10 @@ class ProductCreateView(LoginRequiredMixin, CreateView):
         self.object.save()
         return super().form_valid(form)
 
+class ProductListView(ListView):
+    context_object_name = "product_list"
+    model = Product
+
 class ProductDetailView(DetailView):
     context_object_name = "product_detail"
     model = Product

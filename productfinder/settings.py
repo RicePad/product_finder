@@ -139,5 +139,5 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = MEDIA_DIRECTORY
 MEDIA_URL = '/media/'
 
-LOGIN_REDIRECT_URL = "home"
-LOGOUT_REDIRECT_URL = "home"
+LOGIN_REDIRECT_URL = "product_home"
+LOGOUT_REDIRECT_URL = "product_home"

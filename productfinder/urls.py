@@ -23,8 +23,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.HomeView.as_view(), name="home"),
-    path('home/', views.HomeView.as_view(), name=LOGIN_REDIRECT_URL),
+    path('', views.ProductListView.as_view(), name="product_home"),
+    path('home/', views.ProductListView.as_view(), name=LOGIN_REDIRECT_URL),
     path('accounts/', include('accounts.urls')),
     path('accounts/', include("django.contrib.auth.urls")),
     path('products/', include('products.urls')),
