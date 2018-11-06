@@ -2,6 +2,10 @@ from django.shortcuts import render
 from django.contrib.auth.mixins import(LoginRequiredMixin,PermissionRequiredMixin)
 from django.views.generic import TemplateView, CreateView, ListView, DeleteView, UpdateView, DetailView
 from products.models import Product
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
+
+
 
 
 # Create your views here.
@@ -23,3 +27,11 @@ class ProductListView(ListView):
 class ProductDetailView(DetailView):
     context_object_name = "product_detail"
     model = Product
+
+@login_required(login_url="/accounts/signup")
+def upvote(request, product_id):
+    if request.method == 'POST':
+        product = get_object_or_404(Product, pk=product_id)
+        product.votes_total += 1
+        product.save()
+        return redirect('/products/' + str(product.id))
