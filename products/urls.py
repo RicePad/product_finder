@@ -7,6 +7,5 @@ urlpatterns = [
     path('new/', views.ProductCreateView.as_view(), name="new"),
     path('<int:product_id>/', views.upvote, name='upvote'),
     re_path(r'(?P<pk>\d+)$', views.ProductDetailView.as_view(), name='product_detail'),
-    re_path(r'(?P<pk>\d+)/$', views.ProductDetailView.as_view(), name='product_detail'),
     path('', views.ProductListView.as_view(), name="product_list"),
 ]

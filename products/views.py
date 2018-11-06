@@ -28,7 +28,7 @@ class ProductDetailView(DetailView):
     context_object_name = "product_detail"
     model = Product
 
-@login_required(login_url="/accounts/signup")
+# @login_required
 def upvote(request, product_id):
     if request.method == 'POST':
         product = get_object_or_404(Product, pk=product_id)

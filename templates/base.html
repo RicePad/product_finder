@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
+  {% load fontawesome %}
+  {% fontawesome_stylesheet %}
   {% load staticfiles %}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,6 +32,7 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
+            <a class="nav-item nav-link" href="{% url 'products:new' %}">{% fontawesome_icon 'plus-square' large=True fixed=True %}</a>
             <a class="nav-item nav-link" href="{% url 'accounts:logout' %}">Log Out</a>
           {% else %}
             <a class="nav-item nav-link" href="{% url 'accounts:login' %}">Login</a>
