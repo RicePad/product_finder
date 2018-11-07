@@ -17,7 +17,7 @@ class Product(models.Model):
     user = models.ForeignKey(User, related_name="products", on_delete=models.CASCADE)
 
     def get_absolute_url(self):
-        return reverse('home')
+        return reverse('product_home')
 
     def __str__(self):
         return self.title
