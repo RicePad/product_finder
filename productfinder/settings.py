@@ -46,8 +46,7 @@ INSTALLED_APPS = [
     'fontawesome',
     'accounts',
     'products',
-
-]
+    ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
