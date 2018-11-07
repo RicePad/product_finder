@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 STATICFILES_DIR = [
-    STATIC_DIRECTORY,
+    os.path.join(BASE_DIR, 'productfinder/static/')
 ]
 
 
