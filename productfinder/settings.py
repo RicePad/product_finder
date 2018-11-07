@@ -142,3 +142,8 @@ MEDIA_URL = '/media/'
 
 LOGIN_REDIRECT_URL = "product_home"
 LOGOUT_REDIRECT_URL = "product_home"
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
