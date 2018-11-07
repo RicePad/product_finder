@@ -24,6 +24,9 @@ class ProductListView(ListView):
     context_object_name = "product_list"
     model = Product
 
+    def get_queryset(self):
+        return Product.objects.all().order_by('-votes_total')
+
 class ProductDetailView(DetailView):
     context_object_name = "product_detail"
     model = Product
