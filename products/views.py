@@ -5,11 +5,7 @@ from products.models import Product
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 
-
-
-
 # Create your views here.
-
 class ProductCreateView(LoginRequiredMixin, CreateView):
     fields = ("title", "body", "url", "image", "icon")
     model = Product
@@ -26,6 +22,7 @@ class ProductListView(ListView):
 
     def get_queryset(self):
         return Product.objects.all().order_by('-votes_total')
+
 
 class ProductDetailView(DetailView):
     context_object_name = "product_detail"
