@@ -10,7 +10,7 @@ from rest_framework.reverse import reverse
 @api_view(['GET'])
 def api_root(request, format=None):
     return Response({
-        'products': reverse('productlist_api', request=request, format=format)
+        'users': reverse('userlist_api', request=request, format=format)
     })
 
 class ProductListAPI(generics.ListAPIView):
