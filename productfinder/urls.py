@@ -19,11 +19,13 @@ from productfinder import views
 from productfinder.settings import LOGIN_REDIRECT_URL, LOGOUT_REDIRECT_URL
 from django.conf import settings
 from django.conf.urls.static import static
+from productfinder.views import api_root
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
+    path('api-auth/', views.api_root),
     path('', views.ProductListView.as_view(), name="product_home"),
     path('home/', views.ProductListView.as_view(), name=LOGIN_REDIRECT_URL),
     path('accounts/', include('accounts.urls')),
